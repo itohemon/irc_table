@@ -2,10 +2,36 @@
 <sdf version="1.6">
   <model name="ball">
     <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.030</mass>
+        <inertia>
+          <ixx>0.000013068</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000013068</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000013068</izz>
+        </inertia>
+      </inertial>
       <collision name="collision">
         <geometry>
           <sphere><radius>0.033</radius></sphere>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>
