@@ -36,12 +36,23 @@ def generate_launch_description():
                 get_package_share_directory('irc_table'),
                 'models'))
 
+    spawn_balls_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory('irc_table'),
+                'launch',
+                'spawn_random_balls.launch.py'
+            )
+        )
+    )
+
     ld = LaunchDescription()
 
     # Add the commands to the launch description
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
     ld.add_action(set_env_vars_resources)
+    ld.add_action(spawn_balls_cmd)
 
     return ld
 
