@@ -58,12 +58,13 @@
             </link>
         </model>
 
-
-        <include>
+        <model name="Intelligent_Robot_Contest_world">
+          <static>1</static>
+          <include>
             <uri>
             model://irc_table
             </uri>
-        </include>
-
+          </include>
+        </model>
     </world>
 </sdf>
